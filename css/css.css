@@ -1,0 +1,575 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+hr {
+  margin: 10px 0;
+}
+.div1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  height: 50px;
+  padding: 10px;
+  position: relative;
+}
+.icon1 {
+  position: absolute;
+  float: left;
+}
+.header2 {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon2 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  float: right;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin: 0px 5px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.icon1 ul li a {
+  display: inline-block;
+  position: relative;
+  padding: 0 8px; /* ← space for the lines */
+  text-decoration: none;
+  color: black;
+}
+
+.icon1 ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  transform: translateY(-0%);
+  width: 2px;
+  height: 0%;
+  background-color: red;
+  transition: height 0.3s ease;
+  left: 0;
+}
+
+.icon1 ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  transform: translateY(-0%);
+  width: 2px;
+  height: 0%;
+  background-color: red;
+  transition: height 0.3s ease;
+  right: 0;
+}
+.icon1 ul li a:hover::before,
+.icon1 ul li a:hover::after {
+  height: 100%;
+  transition: 2s;
+}
+.icon1 ul li a i {
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+.icon1 ul li a:hover i {
+  color: red;
+  transition: 1s;
+  transform: scaleX(-1);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo h1 {
+  float: left;
+}
+.logo p {
+  float: right;
+  font-size: 30px;
+}
+.logo-img {
+  float: left;
+  width: 70px;
+  height: 70px;
+  background-color: brown;
+  border: 2px solid black;
+  border-radius: 50px;
+  padding: 10px;
+}
+.logo-img img {
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+}
+.header2 h1 {
+  float: left;
+}
+.black {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: black;
+  padding: 10px;
+}
+.iconcenter {
+  float: none;
+}
+.iconcenter ul li a {
+  position: relative;
+  display: inline-block;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: black;
+}
+
+.iconcenter ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease;
+}
+
+.iconcenter ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease;
+}
+.iconcenter ul li a span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0%;
+  background-color: red;
+  transition: height 0.4s ease;
+}
+
+/* RIGHT line - grows bottom to top */
+.iconcenter ul li a span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  height: 0%;
+  background-color: red;
+  transition: height 0.4s ease;
+}
+
+/* ON HOVER - all 4 lines grow */
+.iconcenter ul li a:hover::before,
+.iconcenter ul li a:hover::after {
+  width: 100%;
+}
+
+.iconcenter ul li a:hover span::before,
+.iconcenter ul li a:hover span::after {
+  height: 100%;
+}
+.icon2 ul li a div {
+  text-align: center;
+  border-radius: 30px;
+  background-color: red;
+  color: white;
+}
+.icon2 ul li a:hover div {
+  transition: 0.5s;
+  transform: translateY(-10px);
+}
+/* all icons red on hover */
+.icon2 ul li a:hover i {
+  color: red;
+}
+
+/* only the last li's icon blue on hover */
+.icon2 ul li:last-child a:hover i {
+  color: red;
+}
+.black i,
+.black p {
+  color: white;
+}
+.black p {
+  margin: 0;
+}
+.textbutton {
+  padding-left: 5px;
+  color: rgb(43, 152, 23);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(43, 152, 23);
+}
+.black:hover .textbutton {
+  transition: 0.5s;
+  transform: scaleX(1.5);
+}
+
+.parentdiv1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
+}
+.picdiv1 {
+  height: 100%;
+}
+.picdiv1 img {
+  height: 100%;
+}
+.textdiv1 {
+  text-align: center;
+  margin: 100px;
+  height: 50%;
+  width: 30%;
+}
+.style {
+  font-size: 30px;
+  padding: 20px 0;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+}
+.textdiv1 p {
+  max-width: 350px;
+}
+.textdiv1 button {
+  background-color: black;
+  margin: 10px;
+  padding: 10px;
+  color: aliceblue;
+}
+.textdiv1 button:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+.screen2 {
+  height: 50vh;
+}
+.parent {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.divscreen2 {
+  overflow: hidden;
+  margin-top: 60px;
+  width: 30%;
+  position: relative;
+  height: 100%;
+}
+
+.divscreen2 img {
+  width: 100%;
+  position: absolute;
+  height: 85%;
+}
+.textscree2 {
+  height: 85%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: end;
+  align-items: center;
+}
+.divscreen2 p {
+  position: relative;
+}
+.textscree2 p:last-child {
+  opacity: 0;
+}
+.divscreen2:hover p:first-child {
+  transform: translateY(-20px);
+  transition: all 0.5s ease-in-out;
+}
+.divscreen2:hover img {
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
+}
+.divscreen2:hover p:last-child {
+  transform: translateY(-20px);
+  transition: all 1s ease-in-out;
+  opacity: 1;
+}
+
+.screen4 {
+  height: 40vh;
+}
+.screen3 {
+  height: 60vh;
+}
+.parentscreen3 {
+  margin: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.headerscreen3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+}
+
+.contentscreen3 {
+  width: 100%;
+  height: 100%;
+  align-items: top;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+.imgiconscreen3 {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.divscreen3 {
+  perspective: 1000px;
+  position: relative;
+
+  width: 300px;
+  height: 300px;
+}
+.divscreen3 img {
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.imageicon {
+  height: 15%;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  background-color: cyan;
+  position: absolute;
+}
+.imageicon i {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+}
+.imageicon i:hover {
+  color: black;
+  background-color: salmon;
+}
+.divscreen3:hover .imageicon {
+  transform: translateY(-20px);
+  opacity: 1;
+  transition: 2s;
+}
+
+.frontback {
+  transform-style: preserve-3d;
+  transition: 2s;
+  position: relative; /* ← only relative, no absolute */
+  width: 100%;
+  height: 100%;
+}
+
+.frontback img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  object-fit: cover;
+}
+
+.frontback img:first-child {
+  transform: rotateY(0deg);
+}
+
+.frontback img:last-child {
+  transform: rotateY(180deg);
+}
+
+.divscreen3:hover .frontback {
+  transform: rotateY(180deg);
+}
+
+.contentscreen4 {
+  background-color: rgb(211, 121, 121);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+.middlescreen4 {
+  width: 50%;
+  height: 60%;
+  align-items: center;
+  display: flex; /* ← add this */
+  flex-direction: column; /* ← stack children vertically */
+  justify-content: space-between;
+  gap: 10px;
+}
+.middlescreen4 p {
+  max-width: 500px;
+}
+.profilescreen4 {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.profilescreen4 img {
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+}
+
+.screen4 {
+  height: 50vh;
+}
+.screen5 {
+  margin-top: 50px;
+  height: 70vh;
+}
+
+.parentscreen5 {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+.contentsection5 {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.transitionscreen5 {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  transition: all 0.5s ease-in-out;
+}
+.transitionscreen5 img:first-child {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+.transitionscreen5 img:last-child {
+  transform: translateY(-300px);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 1s;
+}
+.divscreen3:hover img:last-child {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.imageiconscreen5 {
+  z-index: 3;
+}
+
+.footer {
+  height: 100vh;
+}
+.parentscreen7 {
+  background-color: rgb(167, 167, 23);
+  padding: 0 60px;
+}
+.headerfotter {
+  justify-content: space-between;
+}
+.footerdiv ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 10px;
+}
+.contentfooter {
+  gap: 30px;
+  height: 250px;
+  justify-content: space-between;
+}
+.footer-bottom {
+  justify-content: center;
+}
+.footer-bottom:hover .textbutton {
+  transition: 0.5s;
+  transform: scaleX(1.5);
+}
+.headerfotter,
+.logofotter,
+.footer-bottom,
+.contentfooter,
+.footerdiv {
+  align-items: center;
+  display: flex;
+}
+.logofotter img {
+  width: 50px;
+  height: 50px;
+}
+.fotterlist {
+  width: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footerdiv {
+  flex-flow: column;
+}
+.footer-bottom i {
+  animation: colorchange 0.5s infinite alternate;
+}
+
+@keyframes colorchange {
+  0% {
+    color: black;
+  }
+  100% {
+    color: brown;
+  }
+}
