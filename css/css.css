@@ -1,61 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+h1 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; line-height: 1.2; }
+h2 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; line-height: 1.3; }
+h3 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; line-height: 1.3; }
+h4 { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; line-height: 1.3; }
+
+p {
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 hr {
-  margin: 10px 0;
+  margin: 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
 }
-.div1 {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 5px;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* ============ TOP BAR (HEADER) ============ */
 .header {
   height: 50px;
-  padding: 10px;
+  padding: 10px 50px;
   position: relative;
 }
-.headerdiv{ opacity: 0;
-  flex-flow: row;
-  display: flex;
-justify-content: center;
-position: absolute;
-  z-index: 2;
-  width: 200px;
-  height: 200px;
-  background-color: beige;
 
-}
-.headerdiv ul i a{
-  font-weight:300;
-}
-  .headerdiv a::before,                                                                                
-  .headerdiv a::after {                                                                                
-    display: none;                                                                                     
-  } 
-  .iconcenter ul li:hover .headerdiv {
-    opacity: 1;
-  }
-.headerdiv ul i:hover a  {
-color: brown;
-  transform: scale(1.2);
-}
 .icon1 {
   position: absolute;
   float: left;
 }
-.header2 { 
 
-  overflow:visible;
+.icon1 ul li a {
+  display: inline-block;
+  position: relative;
+  padding: 3px 8px;
+  text-decoration: none;
+  color: #666;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+}
+
+.icon1 ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0%;
+  background-color: darkRed;
+  transition: height 0.3s ease;
+}
+
+.icon1 ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  height: 0%;
+  background-color: darkRed;
+  transition: height 0.3s ease;
+}
+
+.icon1 ul li a:hover::before,
+.icon1 ul li a:hover::after {
+  height: 100%;
+  transition: 2s;
+}
+
+.icon1 ul li a i {
+  display: inline-block;
+  transform-style: preserve-3d;
+  font-size: 13px;
+}
+
+.icon1 ul li a:hover i {
+  color: darkRed;
+  transition: 1s;
+  transform: scaleX(-1);
+}
+
+/* ============ MAIN NAV (HEADER2) ============ */
+.header2 {
+  overflow: visible;
   height: 70px;
+  padding: 5px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .icon2 {
   height: 100%;
   display: flex;
@@ -66,72 +126,49 @@ color: brown;
   float: right;
 }
 
-li {
-  list-style: none;
-  display: inline-block;
-  margin: 0px 5px;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-.icon1 ul li a {
-  display: inline-block;
-  position: relative;
-  padding: 0 8px; /* ← space for the lines */
-  text-decoration: none;
-  color: black;
+.icon2 ul li a i {
+  font-size: 16px;
 }
 
-.icon1 ul li a::before {
-  content: "";
-  position: absolute;
-  top: 0%;
-  transform: translateY(-0%);
-  width: 2px;
-  height: 0%;
+.icon2 ul li a div {
+  text-align: center;
+  border-radius: 30px;
   background-color: darkRed;
-  transition: height 0.3s ease;
-  left: 0;
+  color: white;
+  font-size: 11px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
 }
 
-.icon1 ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: 0%;
-  transform: translateY(-0%);
-  width: 2px;
-  height: 0%;
-  background-color: darkRed;
-  transition: height 0.3s ease;
-  right: 0;
+.icon2 ul li a:hover div {
+  transition: 0.5s;
+  transform: translateY(-8px);
 }
-.icon1 ul li a:hover::before,
-.icon1 ul li a:hover::after {
-  height: 100%;
-  transition: 2s;
-}
-.icon1 ul li a i {
-  display: inline-block;
-  transform-style: preserve-3d;
-}
-.icon1 ul li a:hover i {
+
+.icon2 ul li a:hover i {
   color: darkRed;
-  transition: 1s;
-  transform: scaleX(-1);
 }
+
+.icon2 ul li:last-child a:hover i {
+  color: darkRed;
+}
+
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
+
 .logo h1 {
   float: left;
 }
+
 .logo p {
-  float: right;
   font-size: 30px;
 }
+
 .logo-img {
   float: left;
   width: 70px;
@@ -141,38 +178,39 @@ a {
   border-radius: 50px;
   padding: 10px;
 }
+
 .logo-img img {
   border-radius: 50px;
   width: 100%;
   height: 100%;
 }
+
 .header2 h1 {
   float: left;
 }
-.black {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  background-color: black;
-  padding: 10px;
-}
+
+/* Center Nav */
 .iconcenter {
   float: none;
 }
+
 .iconcenter ul li a {
   position: relative;
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 10px;
   text-decoration: none;
-  color: black;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .iconcenter ul li a::before {
   content: "";
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   width: 0;
   height: 2px;
   background-color: darkRed;
@@ -182,13 +220,14 @@ a {
 .iconcenter ul li a::after {
   content: "";
   position: absolute;
-  bottom: 0%;
-  right: 0%;
+  bottom: 0;
+  right: 0;
   width: 0;
   height: 2px;
   background-color: darkRed;
   transition: width 0.3s ease;
 }
+
 .iconcenter ul li a span::before {
   content: "";
   position: absolute;
@@ -200,7 +239,6 @@ a {
   transition: height 0.4s ease;
 }
 
-/* RIGHT line - grows bottom to top */
 .iconcenter ul li a span::after {
   content: "";
   position: absolute;
@@ -212,7 +250,6 @@ a {
   transition: height 0.4s ease;
 }
 
-/* ON HOVER - all 4 lines grow */
 .iconcenter ul li a:hover::before,
 .iconcenter ul li a:hover::after {
   width: 100%;
@@ -222,94 +259,181 @@ a {
 .iconcenter ul li a:hover span::after {
   height: 100%;
 }
-.icon2 ul li a div {
-  text-align: center;
-  border-radius: 30px;
-  background-color: darkRed;
-  color: white;
-}
-.icon2 ul li a:hover div {
-  transition: 0.5s;
-  transform: translateY(-10px);
-}
-/* all icons red on hover */
-.icon2 ul li a:hover i {
-  color: darkRed;
+
+/* Pages dropdown */
+.pages-dropdown {
+  position: relative;
 }
 
-/* only the last li's icon blue on hover */
-.icon2 ul li:last-child a:hover i {
-  color: darkRed;
+.headerdiv {
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  gap: 40px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: 380px;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px 30px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
 }
-.black i,
-.black p,
-.black .textbutton {
-  color: white;
+
+.pages-dropdown:hover .headerdiv {
+  opacity: 1;
+  pointer-events: auto;
 }
-.black{
-  overflow: hidden;
+
+.headerdiv a::before,
+.headerdiv a::after {
+  display: none !important;
 }
-.black .textbutton {
-  border-bottom-color: white;
+
+.headerdiv-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.black p {
+
+.headerdiv-col p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.headerdiv-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.headerdiv-col ul li {
+  display: block;
   margin: 0;
 }
+
+.iconcenter .pages-dropdown .headerdiv-col ul li a {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 0;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.iconcenter .pages-dropdown .headerdiv-col ul li a:hover {
+  color: brown;
+  transform: scale(1.1);
+}
+
+/* ============ SALE BANNER ============ */
+.black {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: black;
+  padding: 10px 30px;
+  overflow: hidden;
+}
+
+.black i {
+  font-size: 14px;
+  color: white;
+}
+
+.black p {
+  color: white;
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+
+.black .textbutton {
+  color: white;
+  border-bottom-color: white;
+  font-size: 12px;
+}
+
 .textbutton {
-  padding-left: 5px;
+  padding: 2px 5px;
   color: darkRed;
   background: transparent;
   border: none;
   border-bottom: 2px solid darkRed;
-}
-.black:hover .textbutton {
-    transition: 0.3s;           
-    transform: scaleX(1.2);                                                                                                                     
-    letter-spacing: 2px;  
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
 }
 
+.black:hover .textbutton {
+  transition: 0.3s;
+  transform: scaleX(1.2);
+  letter-spacing: 2px;
+}
+
+/* ============ HERO SECTION ============ */
 .parentdiv1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 90%;
 }
+
 .picdiv1 {
   height: 100%;
 }
+
 .picdiv1 img {
   height: 100%;
 }
+
 .textdiv1 {
   text-align: center;
   margin: 100px;
   height: 50%;
   width: 30%;
 }
+
 .style {
   font-size: 30px;
   padding: 20px 0;
   font-style: italic;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Playfair Display', serif;
   color: darkRed;
 }
+
 .textdiv1 p {
   max-width: 350px;
 }
+
 .textdiv1 button {
   background-color: black;
   margin: 10px;
   padding: 10px;
   color: white;
+  cursor: pointer;
 }
+
 .textdiv1 button:hover {
   background-color: white;
   color: black;
   transition: 0.5s;
 }
+
+/* ============ SCREEN 2 - CATEGORIES ============ */
 .screen2 {
   height: 50vh;
 }
+
 .parent {
   overflow: hidden;
   height: 100%;
@@ -317,6 +441,7 @@ a {
   justify-content: space-around;
   align-items: center;
 }
+
 .divscreen2 {
   overflow: hidden;
   margin-top: 60px;
@@ -330,25 +455,36 @@ a {
   position: absolute;
   height: 85%;
 }
+
 .textscree2 {
   height: 85%;
   display: flex;
   flex-flow: column wrap;
   justify-content: end;
   align-items: center;
+  padding-bottom: 15px;
+  gap: 5px;
 }
+
 .divscreen2 p {
   position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
+
 .textscree2 p:last-child {
-    border: none;
+  border: none;
   border-bottom: 2px solid darkRed;
   opacity: 0;
+  font-size: 12px;
 }
+
 .divscreen2:hover p:first-child {
-  transform: translateY(-20px);
+  transform: translateY(-15px);
   transition: all 0.5s ease-in-out;
 }
+
 .divscreen2:hover img {
   transform: scale(1.2);
   transition: all 0.5s ease-in-out;
@@ -356,24 +492,24 @@ a {
 
 .divscreen2:hover p:last-child {
   color: brown;
-    transition: 0.3s;           
-    transform: scaleX(1.2);                                                                                                                     
-    letter-spacing: 2px;  
+  transition: 0.3s;
+  transform: scaleX(1.2);
+  letter-spacing: 2px;
   opacity: 1;
 }
 
-.screen4 {
-  height: 40vh;
-}
+/* ============ SCREEN 3 - TRENDING ============ */
 .screen3 {
   height: 60vh;
 }
+
 .parentscreen3 {
   margin: 50px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .headerscreen3 {
   display: flex;
   justify-content: space-between;
@@ -384,7 +520,9 @@ a {
 .contentscreen3 {
   width: 100%;
   height: 100%;
-  align-items: top;
+  justify-content: space-around;
+  gap: 10px;
+  align-items: center;
   display: flex;
   justify-content: space-around;
   gap: 10px;
@@ -395,25 +533,25 @@ a {
   align-items: end;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
+
 .divscreen3 {
   gap: 10px;
   align-items: center;
   flex-flow: column;
   display: flex;
   justify-content: center;
-  perspective: 1000px;
   position: relative;
-
   width: 300px;
   height: 300px;
 }
+
 .divscreen3 img {
-  justify-content: center;
   width: 100%;
   height: 100%;
 }
+
 .imageicon {
   height: 15%;
   width: 50%;
@@ -424,33 +562,42 @@ a {
   background-color: beige;
   position: absolute;
 }
+
 .imageicon i {
   padding: 15px;
   width: 100%;
   height: 100%;
 }
+
 .imageicon i:hover {
   transition: 0.5s;
-  color:beige ;
+  color: beige;
   background-color: darkRed;
 }
+
 .divscreen3:hover .imageicon {
   transform: translateY(-20px);
   opacity: 1;
   transition: 2s;
 }
-.makerow{
+.divscreen3:hover .test{
+  color: brown;
+}
+.makerow {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
-.linethrought{
+
+.linethrought {
   text-decoration: line-through;
 }
+
+/* Flip card */
 .frontback {
   transform-style: preserve-3d;
   transition: 2s;
-  position: relative; /* ← only relative, no absolute */
+  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -477,6 +624,15 @@ a {
   transform: rotateY(180deg);
 }
 
+/* ============ SCREEN 4 - TESTIMONIAL ============ */
+.screen4 {
+  height: 50vh;
+}
+
+.parentscreen4 {
+  height: 100%;
+}
+
 .contentscreen4 {
   background-color: beige;
   display: flex;
@@ -484,18 +640,21 @@ a {
   align-items: center;
   height: 100%;
 }
+
 .middlescreen4 {
   width: 50%;
   height: 60%;
   align-items: center;
-  display: flex; /* ← add this */
-  flex-direction: column; /* ← stack children vertically */
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: 10px;
 }
+
 .middlescreen4 p {
   max-width: 500px;
 }
+
 .profilescreen4 {
   width: 100%;
   height: 30%;
@@ -504,15 +663,14 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 .profilescreen4 img {
   border-radius: 30px;
   width: 50px;
   height: 50px;
 }
 
-.screen4 {
-  height: 50vh;
-}
+/* ============ SCREEN 5 - YOU MAY LIKE ============ */
 .screen5 {
   margin-top: 50px;
   height: 70vh;
@@ -525,6 +683,7 @@ a {
   align-items: center;
   height: 100%;
 }
+
 .contentsection5 {
   height: 80%;
   width: 100%;
@@ -534,6 +693,7 @@ a {
 }
 
 .transitionscreen5 {
+  background-color: blue;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -541,12 +701,14 @@ a {
   background-color: black;
   transition: all 0.5s ease-in-out;
 }
+
 .transitionscreen5 img:first-child {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 0;
 }
+
 .transitionscreen5 img:last-child {
   transform: translateY(-300px);
   z-index: 1;
@@ -556,189 +718,360 @@ a {
   opacity: 0;
   transition: 1s;
 }
-.divscreen3:hover .transitionscreen5 img:last-child{
+
+.divscreen3:hover .transitionscreen5 img:last-child {
   transform: translateY(0px);
   opacity: 1;
 }
+
 .imageiconscreen5 {
   z-index: 3;
 }
 
-
-.screen6{
+/* ============ SCREEN 6 - LATEST COLLECTIONS ============ */
+.screen6 {
   height: 80vh;
 }
 
-.parentscreen6{
+.parentscreen6 {
   display: flex;
   flex-flow: column;
-justify-content: space-around;
-align-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: darkRed;
   color: white;
   height: 100%;
   width: 100%;
+  padding: 40px 0;
+  gap: 25px;
 }
-.parentscreen6 .contentscreen6 .divscreen6:hover h3{
+
+.parentscreen6 h2 {
+  font-size: 22px;
+  color: white;
+}
+
+.parentscreen6 .contentscreen6 .divscreen6:hover h3 {
   color: beige;
 }
+
 .parentscreen6 .textbutton {
   color: white;
   border-bottom-color: white;
 }
-.contentscreen6{padding: 0 50px;
-  gap: 50px;
-  height: 100%;
-display: flex;
-align-items: center;
-}
-.divscreen6{
-  overflow: hidden;
+
+.contentscreen6 {
+  padding: 0 50px;
+  gap: 30px;
+  height: 80%;
   display: flex;
-justify-content: space-around;
-flex-flow: column;
-align-items: start;
-  width: 100%;
-  height: 100%;
+  align-items: center;
 }
 
-.divscreen6 p{
+.divscreen6 {
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  flex-flow: column;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  gap: 8px;
+  padding: 5px 0;
+}
+
+.divscreen6 p {
   font-size: 15px;
+  color: white;
 }
-.divscreen6 img{
-height: 270px;
-width: 90%;
+
+.divscreen6 h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  color: white;
 }
+
+.divscreen6 img {
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+}
+
 .divscreen6 img:hover {
   transform: scale(1.1);
   transition: all 0.5s ease-in-out;
 }
-.divscreen6 button:hover{
-      transition: 0.3s;           
-  transform: scale(1.2);
+.parentscreen6 .divscreen6 button.textbutton:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
 }
-.screen77{
-  height: 50vh;
+
+
+/* ============ SCREEN 77 - FEATURES ============ */
+.screen77 {
+  height: auto;
+  padding: 40px 0;
 }
-.parentscreen77{
+
+.parentscreen77 {
   overflow: hidden;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: black;
-      position: relative;
+  position: relative;
+  padding: 30px 60px;
 }
-.iconscreen77{
-    align-items: center;
-  height: 50px;
-    display: flex;
+
+.contentscreen77 {
+  text-align: center;
+  padding: 15px;
 }
+
+.contentscreen77 h4 {
+  font-size: 14px;
+  margin: 10px 0 4px;
+}
+
+.contentscreen77 p {
+  font-size: 12px;
+  color: #888;
+}
+
+.iconscreen77 {
+  align-items: center;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+
 .iconscreen77 i {
-  color:grey;
+  color: #aaa;
+  font-size: 28px;
 }
-.iconscreen77:hover i{
+
+.iconscreen77:hover i {
   position: absolute;
 }
-.iconscreen77 i:last-child{
-      transform: translateY(100%);
 
-opacity: 0;
+.iconscreen77 i:last-child {
+  transform: translateY(100%);
+  opacity: 0;
 }
-.contentscreen77 .iconscreen77:hover i:first-child{
-  transform: translateY(-200%);
+
+.contentscreen77 .iconscreen77:hover i:first-child {
+  transform: translateY(-300%);
   transition: 0.5s;
 }
-.contentscreen77 .iconscreen77:hover i:last-child{
-    transform: translateY(0%);
+
+.contentscreen77 .iconscreen77:hover i:last-child {
+  transform: translateY(0%);
   transition: 0.5s;
   opacity: 1;
   color: black;
 }
+
+/* ============ FOOTER ============ */
 .footer {
-  height: 100vh;
+  height: auto;
 }
+
 .parentscreen7 {
-  background-color: black;
+  background-color: #222;
   color: white;
-  padding: 0 60px;
+  padding: 35px 50px 20px;
 }
+
 .parentscreen7 a {
-  color: beige;
+  color: #bbb;
+  font-size: 12px;
 }
+
 .parentscreen7 h2,
 .parentscreen7 h3 {
   color: white;
 }
+
 .parentscreen7 .textbutton {
-  color: beige;
-  border-bottom-color: beige;
+  color: #bbb;
+  border-bottom-color: #bbb;
 }
+
+.parentscreen7 hr {
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
+
 .headerfotter {
   justify-content: space-between;
+  padding: 10px 0;
 }
-.footerdiv ul {
+
+.titlelfooter h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.titlelfooter p {
+  font-size: 12px;
+  color: #999;
+}
+
+.email-subscribe {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-  gap: 10px;
+  gap: 0;
 }
-.contentfooter {
-  gap: 30px;
-  height: 250px;
-  justify-content: space-between;
+
+.email-subscribe input {
+  padding: 8px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  border: 1px solid #555;
+  background: transparent;
+  color: white;
+  outline: none;
 }
-.footer-bottom {
-  justify-content: center;
+
+.email-subscribe input::placeholder {
+  color: #777;
 }
-.footer-bottom:hover .textbutton {
-    transition: 0.3s;           
-    transform: scaleX(1.1);                                                                                                                     
-    letter-spacing: 2px;  
+
+.email-subscribe button {
+  background-color: brown;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
 }
+
+.email-subscribe button:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
 .headerfotter,
 .logofotter,
 .footer-bottom,
 .contentfooter,
 .footerdiv {
-  align-items: center;
+align-items: center;
   display: flex;
 }
-.logofotter img {
-  width: 50px;
-  height: 50px;
-}
-.fotterlist {
-  width: 200px;
 
+.logofotter {
+  gap: 8px;
+}
+
+.logofotter img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.logofotter h2 {
+  font-size: 20px;
+}
+
+.logofotter p {
+  font-size: 10px;
+  color: #999;
+  letter-spacing: 1px;
+}
+
+.contentfooter {
+  gap: 20px;
+  height: auto;
+  justify-content: space-between;
+  padding: 25px 0;
+}
+
+.footerdiv {
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.footerdiv h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  letter-spacing: 0.3px;
+}
+
+.footerdiv ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column;
+  gap: 8px;
+}
+
+.footerdiv ul li {
+  margin: 0;
+}
+
+.footerdiv ul li a {
+  font-size: 12px;
+  color: #999;
+}
+
+.fotterlist {
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.footerdiv {
-  flex-flow: column;
+
+.fotterlist ul li:hover a {
+  display: inline-block;
+  transition: 0.5s;
+  transform: scale(1.1);
+  border-bottom: solid 1px white;
 }
+
+.footer-bottom {
+  justify-content: center;
+  padding: 15px 0;
+  gap: 5px;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: #999;
+}
+
+.footer-bottom:hover .textbutton {
+  transition: 0.3s;
+  transform: scaleX(1.1);
+  letter-spacing: 2px;
+}
+
 .footer-bottom i {
+  font-size: 14px;
   animation: colorchange 0.5s infinite alternate;
 }
-.fotterlist ul li:hover a{
-      display: inline-block;
-  transition: 0.5s;
-    transform: scale(1.2);
-    border-bottom: solid 1px white;
-}
-.email-subscribe button{
-  background-color: brown;
-}
-.email-subscribe button:hover{
-    transform: scale(1.2);
-    transition: 0.5;
-}
+
 @keyframes colorchange {
-  0% {
-    color: white;
-  }
-  100% {
-    color: darkRed;
-  }
+  0% { color: white; }
+  100% { color: darkRed; }
+}
+
+/* Footer social icons */
+.parentscreen7 .icon2 ul li a i {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.parentscreen7 .icon2 ul li a:hover i {
+  color: white;
+}
+
+/* ============ GENERAL UTILITIES ============ */
+.div1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
