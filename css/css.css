@@ -472,10 +472,12 @@ a {
   font-weight: 500;
   letter-spacing: 0.3px;
 }
-
+.textscree2 p{
+  color: white;
+}
 .textscree2 p:last-child {
   border: none;
-  border-bottom: 2px solid darkRed;
+  border-bottom: 2px solid burlywood;
   opacity: 0;
   font-size: 12px;
 }
@@ -491,7 +493,7 @@ a {
 }
 
 .divscreen2:hover p:last-child {
-  color: brown;
+  color: burlywood;
   transition: 0.3s;
   transform: scaleX(1.2);
   letter-spacing: 2px;
@@ -814,7 +816,7 @@ a {
 }
 
 .parentscreen77 {
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -824,6 +826,7 @@ a {
 }
 
 .contentscreen77 {
+  overflow: hidden;
   text-align: center;
   padding: 15px;
 }
@@ -839,6 +842,8 @@ a {
 }
 
 .iconscreen77 {
+      overflow: hidden; /* ADD THIS */
+    position: relative;
   align-items: center;
   height: 40px;
   display: flex;
@@ -860,7 +865,7 @@ a {
 }
 
 .contentscreen77 .iconscreen77:hover i:first-child {
-  transform: translateY(-300%);
+  transform: translateY(-130%);
   transition: 0.5s;
 }
 
